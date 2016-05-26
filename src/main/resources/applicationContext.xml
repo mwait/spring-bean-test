@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean name="classA" class="com.wait.simple.spring.TestChildClassA">
+<property name="address" value="Jestem klasa A"/>
+<property name="configuration" value="Configuracja z klasy A"/>
+<property name="textChildClass" value="text z klasy A"/>
+</bean>
+
+<bean name="classB" class="com.wait.simple.spring.TestChildClassB">
+<property name="address" value="Jestem klasa B"/>
+<property name="configuration" value="Configuracja z klasy B"/>
+<property name="textChildClass" value="text z klasy B"/>
+</bean>
+
+</beans>
