@@ -12,5 +12,11 @@ public class TestChildClassB extends TestParentClass{
 		this.textChildClass = textChildClass;
 	}
 	
-	
+	public TestChildClassB() {
+		super();
+	}
+
+	public TestChildClassB(String address) {
+		super(address);
+	}
 }

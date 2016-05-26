@@ -15,4 +15,32 @@
 <property name="textChildClass" value="text z klasy B"/>
 </bean>
 
+<bean name ="configuration" class="com.wait.simple.spring.factory.Configuration">
+<property name="conf" value="/konfiguracja"/>
+</bean>
+
+<!-- fabryki -->
+
+
+<!-- <bean id="clasDataWS" class="com.wait.simple.spring.TestChildClassA"
+      factory-bean="classDataWSFactory" factory-method="create" lazy-init="true"/> -->
+   
+   <!-- ten bean jest fabryką i wraca obiekt klasy TestChildClassA -->
+  <bean id="classDataWSFactory" class="com.wait.simple.spring.factory.JaxWsClassDataWSFactory" lazy-init="true">
+ <!--  <constructor-arg index="0" value="test"/> -->
+ <property name="configuration" ref="configuration" />
+    <property name="address" value="http://example.com"/> 
+  </bean>
+  
+  
+<!--   <bean id="antScanWS" class="com.wait.simple.spring.TestChildClassB"
+      factory-bean="antScanWSFactory" factory-method="create" lazy-init="true"/> -->
+      
+      
+    <!-- ten bean jest fabryką i wraca obiekt klasy TestChildClassB -->
+  <bean id="antScanWSFactory" class="com.wait.simple.spring.factory.JaxWsAnScanWSFactory" lazy-init="true">
+    <property name="configuration" ref="configuration" />
+    <property name="address" value="http://anotherexample.com"/>
+  </bean>
+
 </beans>

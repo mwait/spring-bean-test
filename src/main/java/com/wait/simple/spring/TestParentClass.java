@@ -9,6 +9,13 @@ public class TestParentClass {
 		System.out.println("Witaj w klasie"+this.getClass().getSimpleName());
 	}
 
+	public TestParentClass() {
+		
+	}
+	
+	public TestParentClass(String address){
+		this.address=address;
+	}
 	public String getAddress() {
 		return address;
 	}
