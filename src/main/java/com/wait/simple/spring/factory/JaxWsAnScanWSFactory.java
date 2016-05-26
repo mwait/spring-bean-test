@@ -5,17 +5,17 @@ import java.net.URL;
 
 import org.springframework.beans.factory.FactoryBean;
 
-import com.wait.simple.spring.TestChildClassA;
+import com.wait.simple.spring.TestChildClassB;
 
 public class JaxWsAnScanWSFactory extends JaxWsProxyFactoryBean implements FactoryBean{
 
-	private TestChildClassA service;
+	private TestChildClassB service;
 	 
 	 public JaxWsAnScanWSFactory() {
 	 }
 	 
 	 @Override
-   public TestChildClassA getObject() throws Exception {
+   public TestChildClassB getObject() throws Exception {
 		  String urlString = getAddress()+getConfiguration().getConf();
 		  URL url =null;
 		  try {
@@ -23,12 +23,12 @@ public class JaxWsAnScanWSFactory extends JaxWsProxyFactoryBean implements Facto
 		  } catch (MalformedURLException e) {
            e.printStackTrace();
 		  }
-		 service=new TestChildClassA(url.toString());
+		 service=new TestChildClassB(url.toString());
        return service;
    }
 	 @Override
-   public Class getObjectType() {
-       return TestChildClassA.class;
+   public Class<TestChildClassB> getObjectType() {
+       return TestChildClassB.class;
    }
 	 @Override
    public boolean isSingleton() {

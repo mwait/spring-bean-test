@@ -17,7 +17,7 @@ public class Application {
 		TestChildClassA testFromFactory = (TestChildClassA) context.getBean("classDataWSFactory");
 		print(testFromFactory.getClass().getSimpleName()); print(testFromFactory.getAddress());
 		
-		TestChildClassA testFromFactoryB = (TestChildClassA) context.getBean("antScanWSFactory");
+		TestChildClassB testFromFactoryB = (TestChildClassB) context.getBean("antScanWSFactory");
 		print(testFromFactoryB.getClass().getSimpleName()); print(testFromFactoryB.getAddress());
 		
 		
